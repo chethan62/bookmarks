@@ -1,6 +1,12 @@
-# 5 Games to Learn Linux
+# Bookmarks
 
-Five interactive ways to build real command-line skill. Every link checked live (2026-10-30, all HTTP 200).
+One repo, everything worth keeping: five games that teach real Linux command-line skill, plus the handy sites cut from a browser bookmark export. Every public link checked live (2026-10-30).
+
+[Games](#5-games-to-learn-linux) · [Handy sites](#handy-sites) · [Suggested order](#suggested-order)
+
+## 5 Games to Learn Linux
+
+Five interactive ways to build real command-line skill.
 
 | # | Game | Shell | Level | What it teaches |
 |---|------|-------|-------|-----------------|
@@ -71,6 +77,8 @@ Pulled from a real browser bookmark set — the ones worth keeping, **full site 
 - [Vast.ai](https://vast.ai/) · [Jarvislabs](https://jarvislabs.ai/) · [Yotta](https://console.yottalabs.ai/) · [E2E Networks](https://myaccount.e2enetworks.com/)
 
 Link check (2026-10-30): every URL above answered 200 except the handful behind Cloudflare bot walls — `chatgpt.com`, `claude.ai`, `chat.deepseek.com`, `meta.ai`, `coddy.tech` — which return 403 to `curl` but load normally in a browser. `hyprstylish.com` was dropped: its DNS no longer resolves.
+
+Local-only list: `PRIVATE.md` — same working copy, gitignored, never pushed (localhost dashboards, one-off session links, streaming and game-download sites).
 
 ## License
 
