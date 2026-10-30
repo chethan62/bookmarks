@@ -2,7 +2,7 @@
 
 One repo, everything worth keeping: five games that teach real Linux command-line skill, plus the handy sites cut from a browser bookmark export. Every public link checked live (2026-10-30).
 
-[Games](#5-games-to-learn-linux) · [Handy sites](#handy-sites) · [Suggested order](#suggested-order)
+[Games](#5-games-to-learn-linux) · [Handy sites](#handy-sites) · [Import as bookmarks](#import-as-bookmarks) · [Suggested order](#suggested-order)
 
 ## 5 Games to Learn Linux
 
@@ -79,6 +79,28 @@ Pulled from a real browser bookmark set — the ones worth keeping, **full site 
 Link check (2026-10-30): every URL above answered 200 except the handful behind Cloudflare bot walls — `chatgpt.com`, `claude.ai`, `chat.deepseek.com`, `meta.ai`, `coddy.tech` — which return 403 to `curl` but load normally in a browser. `hyprstylish.com` was dropped: its DNS no longer resolves.
 
 Local-only list: `PRIVATE.md` — same working copy, gitignored, never pushed (localhost dashboards, one-off session links, streaming and game-download sites).
+
+## Import as bookmarks
+
+`bookmarks.html` is a Netscape bookmark file — drop it straight into a browser:
+
+- **Firefox** — Bookmarks ▸ Manage bookmarks ▸ Import and Backup ▸ *Import Bookmarks from HTML*
+- **Chrome / Edge / Brave** — Bookmark manager ▸ ⋮ ▸ *Import bookmarks*
+- **Safari** — File ▸ Import From ▸ Bookmarks HTML File
+
+Imports land in folders mirroring this README: **Linux Games**, **Linux & desktop**, **Learning & dev reference**, **AI chat / models**, **GPU rental**.
+
+| File | What it is | In git |
+| --- | --- | --- |
+| `README.md` | source of truth — every folder and link | yes |
+| `build.py` | regenerates both bookmark files from the README (stdlib only) | yes |
+| `bookmarks.html` | importable bookmark file (generated, do not hand-edit) | yes |
+| `PRIVATE.md`, `PRIVATE.html` | local-only list, same format | **no** — gitignored |
+
+```bash
+python3 build.py                                  # bookmarks.html from README.md
+python3 build.py --source ~/bookmarks-export.html # + local-only PRIVATE.md/.html
+```
 
 ## License
 
