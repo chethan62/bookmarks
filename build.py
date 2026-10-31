@@ -27,7 +27,7 @@ def readme_categories():
     for line in tail.splitlines():
         if line.startswith("## "):
             break
-        if m := re.fullmatch(r"\*\*(.+?)\*\*", line.strip()):
+        if m := re.match(r"\*\*(.+?)\*\*", line.strip()):   # allow "**Name** — note"
             group = m.group(1)
             cats.append((group, []))
         elif group and line.startswith("- "):

@@ -43,6 +43,15 @@ New to the terminal: **Bandit** → **Bashcrawl** for the fun pass → **CMD Cha
 
 Pulled from a real browser bookmark set — the ones worth keeping, **full site URLs**, nothing local (`localhost` dashboards, chat-thread links, tokenised player URLs and the streaming/anime/piracy bookmarks are deliberately left out).
 
+**Essentials** — verified live
+
+- [Google](https://www.google.com/) · [Wikipedia](https://en.wikipedia.org/) · [Internet Archive](https://archive.org/)
+- [Arch Wiki](https://wiki.archlinux.org/) · [Arch packages](https://archlinux.org/packages/) · [AUR](https://aur.archlinux.org/) · [CachyOS Wiki](https://wiki.cachyos.org/)
+- [GitHub](https://github.com/) · [Stack Overflow](https://stackoverflow.com/) · [MDN](https://developer.mozilla.org/) · [Hacker News](https://news.ycombinator.com/)
+- [docs.rs](https://docs.rs/) · [PyPI](https://pypi.org/) · [Docker Hub](https://hub.docker.com/) · [Hugging Face](https://huggingface.co/)
+- [Google Maps](https://maps.google.com/) · [Google Drive](https://drive.google.com/) · [WhatsApp Web](https://web.whatsapp.com/) · [Speedtest](https://www.speedtest.net/)
+- [RunPod](https://www.runpod.io/) · [GST portal (India)](https://www.gst.gov.in/) · [Income Tax e-filing](https://www.incometax.gov.in/)
+
 **Linux & desktop**
 
 - [DistroFinder](https://distro-finder.com/) — pick a distro by answers, not vibes
@@ -88,7 +97,7 @@ Local-only list: `PRIVATE.md` — same working copy, gitignored, never pushed (l
 - **Chrome / Edge / Brave** — Bookmark manager ▸ ⋮ ▸ *Import bookmarks*
 - **Safari** — File ▸ Import From ▸ Bookmarks HTML File
 
-Imports land in folders mirroring this README: **Linux Games**, **Linux & desktop**, **Learning & dev reference**, **AI chat / models**, **GPU rental**.
+Imports land in folders mirroring this README: **Essentials**, **Linux Games**, **Linux & desktop**, **Learning & dev reference**, **AI chat / models**, **GPU rental**.
 
 | File | What it is | In git |
 | --- | --- | --- |
