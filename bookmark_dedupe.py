@@ -16,8 +16,9 @@ TRACKING = ("utm_", "fbclid", "gclid", "mc_cid", "mc_eid", "ref_src", "si")
 
 
 def norm(url):
-    """Comparison key: ignore scheme, fragment, trailing slash, tracking params,
-    host case. Returns None for non-http(s) links (kept as-is, never deduped)."""
+    """Comparison key: keep scheme and port (http != https, :8090 != :9117), ignore
+    fragment, trailing slash, tracking params and host case. Returns None for
+    non-http(s) links (kept as-is, never deduped)."""
     try:
         u = urlsplit(url.strip())
     except ValueError:
@@ -33,7 +34,7 @@ def norm(url):
             host = host[: -len(dflt)]
             break
     path = u.path.rstrip("/")
-    return f"{host}{path}" + (f"?{urlencode(q)}" if q else "")
+    return f"{u.scheme.lower()}://{host}{path}" + (f"?{urlencode(q)}" if q else "")
 
 
 class Node:
@@ -171,7 +172,8 @@ def selftest():
     src = """<!DOCTYPE NETSCAPE-Bookmark-file-1><DL><p>
 <DT><H3>Daily</H3><DL><p>
   <DT><A HREF="https://Example.com/a/?utm_source=x">A</A>
-  <DT><A HREF="http://example.com/a#frag">A again</A>
+  <DT><A HREF="https://example.com/a#frag">A again</A>
+  <DT><A HREF="http://example.com/a">A over plain http</A>
 </DL><p>
 <DT><H3>Daily</H3><DL><p>
   <DT><A HREF="https://example.com/a/">A third</A>
@@ -181,14 +183,15 @@ def selftest():
 </DL><p>"""
     tree, merges, removed = run(src)
     assert len(tree) == 2, [n.title for n in tree]                 # Daily merged into one
-    assert tree[0].title == "Daily" and len(tree[0].children) == 2  # A once, B once
+    assert tree[0].title == "Daily" and len(tree[0].children) == 3  # https A, http A, B — scheme kept
     assert tree[1].title == "Other" and len(tree[1].children) == 0  # B deduped across folders
     assert merges and merges[0][0] == "Daily"
     assert len(removed) == 3, removed                              # A x2 + B (cross-folder) dropped
     out = to_html(tree)
     tree2, m2, r2 = run(out)                                       # idempotent
     assert count(tree2) == count(tree) and not m2 and not r2
-    assert norm("https://EXAMPLE.com/x/?utm_medium=1#f") == norm("http://example.com/x")
+    assert norm("https://EXAMPLE.com/x/?utm_medium=1#f") == norm("https://example.com/x")
+    assert norm("https://example.com/x") != norm("http://example.com/x")      # scheme is significant
     assert norm("http://localhost:8090/") != norm("http://localhost:9117/")   # port is significant
     assert norm("https://example.com:443/a") == norm("https://example.com/a")  # default port is not
     print("selftest ok:", count(tree), "links,", len(merges), "merge(s),", len(removed), "removed")
