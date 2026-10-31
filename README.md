@@ -52,6 +52,14 @@ Pulled from a real browser bookmark set — the ones worth keeping, **full site 
 - [Google Maps](https://maps.google.com/) · [Google Drive](https://drive.google.com/) · [WhatsApp Web](https://web.whatsapp.com/) · [Speedtest](https://www.speedtest.net/)
 - [RunPod](https://www.runpod.io/) · [GST portal (India)](https://www.gst.gov.in/) · [Income Tax e-filing](https://www.incometax.gov.in/)
 
+**Tech news** — verified live (Ars answers 405 to curl: WAF, fine in a browser)
+
+- [Phoronix](https://www.phoronix.com/) · [LWN.net](https://lwn.net/) · [Lobsters](https://lobste.rs/) · [Slashdot](https://slashdot.org/)
+- [The Register](https://www.theregister.com/) · [Ars Technica](https://arstechnica.com/) · [TechCrunch](https://techcrunch.com/) · [The Verge](https://www.theverge.com/)
+- [ServeTheHome](https://www.servethehome.com/) · [Tom's Hardware](https://www.tomshardware.com/) · [IEEE Spectrum](https://spectrum.ieee.org/)
+- [Arch news](https://archlinux.org/news/) · [This Week in Rust](https://this-week-in-rust.org/) · [Rust Blog](https://blog.rust-lang.org/)
+- [Real Python](https://realpython.com/) · [Python Insider](https://pythoninsider.blogspot.com/) · [r/linux](https://www.reddit.com/r/linux/)
+
 **Linux & desktop**
 
 - [DistroFinder](https://distro-finder.com/) — pick a distro by answers, not vibes
