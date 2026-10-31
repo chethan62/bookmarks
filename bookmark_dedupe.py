@@ -33,6 +33,10 @@ def norm(url):
         if host.endswith(dflt):
             host = host[: -len(dflt)]
             break
+    hostname, sep, port = host.partition(":")
+    if hostname.startswith("www."):        # www.example.com == example.com
+        hostname = hostname[4:]
+    host = hostname + (":" + port if sep else "")
     path = u.path.rstrip("/")
     return f"{u.scheme.lower()}://{host}{path}" + (f"?{urlencode(q)}" if q else "")
 
@@ -192,6 +196,9 @@ def selftest():
     assert count(tree2) == count(tree) and not m2 and not r2
     assert norm("https://EXAMPLE.com/x/?utm_medium=1#f") == norm("https://example.com/x")
     assert norm("https://example.com/x") != norm("http://example.com/x")      # scheme is significant
+    assert norm("https://www.example.com/x") == norm("https://example.com/x") # www folded
+    assert norm("https://www2.example.com/x") != norm("https://example.com/x") # only www.
+    assert norm("https://WWW.Example.com:8443/x") == norm("https://example.com:8443/x")
     assert norm("http://localhost:8090/") != norm("http://localhost:9117/")   # port is significant
     assert norm("https://example.com:443/a") == norm("https://example.com/a")  # default port is not
     print("selftest ok:", count(tree), "links,", len(merges), "merge(s),", len(removed), "removed")
