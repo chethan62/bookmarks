@@ -60,6 +60,13 @@ Pulled from a real browser bookmark set — the ones worth keeping, **full site 
 - [Arch news](https://archlinux.org/news/) · [This Week in Rust](https://this-week-in-rust.org/) · [Rust Blog](https://blog.rust-lang.org/)
 - [Real Python](https://realpython.com/) · [Python Insider](https://pythoninsider.blogspot.com/) · [r/linux](https://www.reddit.com/r/linux/)
 
+**Gaming news** — verified live (GameSpot answers 403 to curl: bot wall, fine in a browser)
+
+- [GamingOnLinux](https://www.gamingonlinux.com/) · [ProtonDB](https://www.protondb.com/) · [r/linux_gaming](https://www.reddit.com/r/linux_gaming/) · [Steam news](https://store.steampowered.com/news/)
+- [PC Gamer](https://www.pcgamer.com/) · [Rock Paper Shotgun](https://www.rockpapershotgun.com/) · [Eurogamer](https://www.eurogamer.net/) · [VG247](https://www.vg247.com/)
+- [Polygon](https://www.polygon.com/) · [Kotaku](https://kotaku.com/) · [IGN](https://www.ign.com/) · [GameSpot](https://www.gamespot.com/)
+- [DSOGaming](https://www.dsogaming.com/) · [GamesIndustry.biz](https://www.gamesindustry.biz/) · [r/GameDeals](https://www.reddit.com/r/GameDeals/)
+
 **Linux & desktop**
 
 - [DistroFinder](https://distro-finder.com/) — pick a distro by answers, not vibes
